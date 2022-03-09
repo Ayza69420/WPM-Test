@@ -1,4 +1,4 @@
-function format(data,array,symbol='{}') {
+function format(data,array,symbol="{}") {
     var newString = data;
 
     while (array.length > 0) {
@@ -13,7 +13,7 @@ var start_time = new Date().getTime();
 var sentence = "this is the sentence you gotta write to test your speed".split(" ");
 var correct = 0;
 
-const readline = require('readline').createInterface({
+const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout
 })
