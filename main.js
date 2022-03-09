@@ -7,7 +7,6 @@ function format(data,array,symbol='{}') {
     }
 
     return newString
-    
 }
 
 var start_time = new Date().getTime();
