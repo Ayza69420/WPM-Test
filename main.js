@@ -10,7 +10,7 @@ function format(data,array,symbol="{}") {
 }
 
 var start_time = new Date().getTime();
-var sentence = "this is the sentence you gotta write to test your speed".split(" ");
+var sentence = "Write this to check your WPM (Words per minute).".split(" ");
 var correct = 0;
 
 const readline = require("readline").createInterface({
