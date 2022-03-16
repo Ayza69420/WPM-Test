@@ -10,7 +10,7 @@ function format(data,array,symbol="{}") {
 }
 
 var start_time = new Date().getTime();
-var sentence = "Write this to check your WPM (Words per minute).".split(" ");
+var sentence = "this is what you gotta write to test your wpm.";
 var correct = 0;
 
 const readline = require("readline").createInterface({
@@ -18,17 +18,24 @@ const readline = require("readline").createInterface({
     output: process.stdout
 })
 
-readline.question(format("{}\n", [sentence.join(" ")]), x => {
-    for (let i=0; i<x.split(" ").length; i++) {
-        if (x.split(" ")[i] == sentence[i]) {
-            correct += 1;
-        }    
-    }
+readline.question(format("{}\n", [sentence]), inp => {
+	for (let i=0; i<sentence.length; i++) {
+		try {
+			if (inp[i] == sentence[i]) {
+				correct += 1;
+			}
+		}
+		
+		catch (err) {
+			break
+		}
+	}
 
     time = new Date().getTime();
-    
-    console.log(format("WPM: {}", [correct/((time/1000-start_time/1000)/60)]));
-    console.log(format("Accuracy: {}%", [Math.round((correct/sentence.length)*100)]));
+    time_taken = (time-start_time)/1000
+	
+    console.log(format("WPM: {}", [inp.length*60/(5*time_taken)]));
+    console.log(format("Accuracy: {}%", [(correct/sentence.length)*100]));
 
     readline.close();
 })
