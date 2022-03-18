@@ -16,4 +16,4 @@ for i,v in enumerate(sentence):
 
 time_taken = time.time()-start_time
 
-print(f"WPM: {len(inp)*60/(5*time_taken)}\nAcurracy: {correct/len(sentence)*100}%")
+print(f"WPM: {len(inp)*60/(5*time_taken)}\nAccuracy: {correct/len(sentence)*100}%")
